@@ -20,7 +20,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 # Файл, полученный в Google Developer Console
 CREDENTIALS_FILE = 'cred.json'
 # ID Google Sheets документа (можно взять из его URL)
-spreadsheet_id = '1jt_N03r_cXrgSuquPI-CbAP4PZhQyaWxVfhi-w4u5tc'
+spreadsheet_id = 'your_id_sheets'
 
 # Авторизуемся и получаем service — экземпляр доступа к API
 credentials = ServiceAccountCredentials.from_json_keyfile_name(
@@ -30,7 +30,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name(
 httpAuth = credentials.authorize(httplib2.Http())
 service = apiclient.discovery.build('sheets', 'v4', http = httpAuth)
 
-pyrus_client = client.PyrusAPI(login='v.kolomeets@docsinbox.ru', security_key='7BHfgFSq~ryLehVJJCKipsoh2WksW9-IG-3jde5bqbuISgLYOQuXSXCSdptyz99TigHPLcV7qoUQFB~pirTOD5InTPIxB7la')
+pyrus_client = client.PyrusAPI(login='v.kolomeets@docsinbox.ru', security_key='your_key_pyrus')
 
 auth_response = pyrus_client.auth()
 if auth_response.success:
